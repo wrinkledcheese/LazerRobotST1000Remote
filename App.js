@@ -6,6 +6,10 @@ import {
   Image
 } from 'react-native';
 
+import {
+  Controller
+} from './components/controller';
+
 export default class App extends React.Component {
 
   render() {
@@ -18,10 +22,7 @@ export default class App extends React.Component {
           style={ styles.backgroundImage }
           source={ require( './images/background.png' ) }
         />
-
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <Controller />
       </View>
     );
   }
