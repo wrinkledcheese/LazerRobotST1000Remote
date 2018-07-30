@@ -22,7 +22,15 @@ export default class App extends React.Component {
           style={ styles.backgroundImage }
           source={ require( './images/background.png' ) }
         />
-        <Controller />
+        {
+          /*                                                                   *
+           * TODO: Add refs here and have the App maintain state.  The app will
+           * have references which will be used to send the data via bluetooth
+           * to the arduino.
+           */
+        }
+        <Controller forward={true} reverse={true} position='left' />
+        <Controller forward={true} reverse={true} position='right' />
       </View>
     );
   }
