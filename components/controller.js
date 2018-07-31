@@ -4,8 +4,10 @@ import {
   View, 
   Image,
   Text,
-  TouchableNativeFeedback
+  TouchableWithoutFeedback
 } from 'react-native';
+
+import nipplejs from '../lib/nipplejs';
 
 import { DirectionImage } from './directionImage.js';
 
@@ -134,9 +136,10 @@ export class Controller extends React.Component {
 
 	touchableDirection( direction ){
 		const imageSource = this.directionImage( direction );
-		return ()=>this.props[ direction ] ? ( <TouchableNativeFeedback
+		return ()=>this.props[ direction ] ? ( <TouchableWithoutFeedback
 				onPress={ e => { this.directionPressHandler( direction ) } }
-				onLongPress={ e => {this.directionLongPressHandler( direction ) } }
+				onLongPress={ e => {console.log( e.nativeEvent.locationX ); this.directionLongPressHandler( direction ) } }
+
 				delayLongPress={1000}
 				style={styles.touchables[ direction ]}
 			>
@@ -144,8 +147,9 @@ export class Controller extends React.Component {
 					style={styles.images.directionImage}
 					source={ imageSource }
 				/>
-			</TouchableNativeFeedback> ) : null;
+			</TouchableWithoutFeedback> ) : null;
 	}
+
 
 	render(){
 

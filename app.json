@@ -1,6 +1,10 @@
 {
   "expo": {
     "sdkVersion": "27.0.0",
-    "orientation": "landscape"
-  }
+    "orientation": "landscape",
+	  "android" :{
+	  	"package":"ca.arseinc.omgwtfbbq",
+	  	"versionCode":0,
+	  }
+	}
 }
